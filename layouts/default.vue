@@ -1,62 +1,83 @@
 <template>
   <div>
+    <nav class="navbar is-transparent" role="navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item is-hidden-tablet">
+            <p>
+              Alice
+              <i>SZYMANSKI</i>
+            </p>
+          </a>
+          <a
+            role="button"
+            class="navbar-burger burger"
+            aria-label="menu"
+            aria-expanded="false"
+            :class="{'is-active': isBurgerToggled}"
+            v-on:click="isBurgerToggled = !isBurgerToggled"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-menu" :class="{'is-active': isBurgerToggled}">
+          <div class="navbar-start">
+            <a class="navbar-item has-text-centered">Accueil</a>
+            <a class="navbar-item">Biographie</a>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link is-arrowless">Musique de chambre</a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item">Trio Zerline</a>
+                <a class="navbar-item">Duo Baroque</a>
+                <a class="navbar-item">Duo Flute et Guitare</a>
+              </div>
+            </div>
+            <a class="navbar-item">Calendrier</a>
+            <a class="navbar-item">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
     <Nuxt />
+    <footer class="footer">
+      <div class="content has-text-white has-text-centered">
+        <p>@llanas-web</p>
+      </div>
+    </footer>
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      isBurgerToggled: false,
+    };
+  },
+};
+</script>
+
 <style>
-html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+.navbar {
+  position: absolute;
+  width: 100%;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.65) 65%,
+    rgba(0, 212, 255, 0) 100%
+  );
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+.navbar-start {
+  flex-grow: 1;
+  justify-content: center;
+  text-align: center;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.navbar-item {
+  min-width: 180px;
 }
 </style>

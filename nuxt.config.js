@@ -1,5 +1,8 @@
 
 export default {
+    env: {
+        strapiBaseUri: process.env.API_URL || "http://localhost:1337"
+    },
     /*
     ** Nuxt rendering mode
     ** See https://nuxtjs.org/api/configuration-mode
@@ -22,7 +25,9 @@ export default {
             { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Duru+Sans&family=Expletus+Sans:wght@400&display=swap" },
+            { src: 'font-awesome/scss/font-awesome.scss', lang: 'scss' }
         ]
     },
     /*
@@ -46,14 +51,29 @@ export default {
     ** Nuxt.js dev-modules
     */
     buildModules: [
+        "@nuxtjs/fontawesome"
     ],
+    fontawesome: {
+        icons: {
+            solid: true,
+            brands: true
+        }
+    },
     /*
     ** Nuxt.js modules
     */
     modules: [
         // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
         // '@nuxtjs/bulma',
+        "@nuxtjs/apollo"
     ],
+    apollo: {
+        clientConfigs: {
+            default: {
+                httpEndpoint: process.env.BACKEND_URL || 'http://localhost:1337/graphql'
+            }
+        }
+    },
     /*
     ** Build configuration
     ** See https://nuxtjs.org/api/configuration-build/

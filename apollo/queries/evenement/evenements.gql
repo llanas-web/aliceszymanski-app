@@ -1,0 +1,12 @@
+query {
+  evenements(sort: "starting:DESC") {
+    id
+    title
+    description
+    starting
+    ending
+    image {
+      formats
+    }
+  }
+}

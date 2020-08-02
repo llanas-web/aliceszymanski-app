@@ -4,6 +4,9 @@
 
 /* Variable changes go here */
 
+$yellow: #FFDB5E;
+$grey: #606060;
+
 // Colours
 $primary: #d0eeed;
 $secondary: #d0e0ee;
@@ -12,7 +15,27 @@ $secondary: #d0e0ee;
 $tablet: 724px;
 $desktop: 960px + (2 * $gap);
 $widescreen: 1152px + (2 * $gap);
-$fullhd: 1344px + (2 * $gap);
+
+$family-sans-serif: 'Duru Sans', sans-serif;
+$family-secondary: 'Expletus Sans', cursive;
+
+$footer-padding: 1rem 1.5rem;
+$footer-background-color: $grey;
+
+$navbar-background-color: #fff0;
+$divider-background-color: $yellow;
+$divider-color: $yellow;
+$divider-thickness: 2rem;
+$divider-margin-inner-size: 0px;
 
 /* Import the rest of Bulma */
 @import '~bulma';
+@import '~@creativebulma/bulma-divider';
+@import '~bulma-timeline';
+
+
+.coverImage {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

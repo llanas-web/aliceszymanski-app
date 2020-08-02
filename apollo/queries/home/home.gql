@@ -1,0 +1,16 @@
+query {
+  home {
+    id
+    cover {
+      id
+      url
+    }
+    description
+    bio
+    bioPhoto { 
+      id
+      formats
+    }
+    contact
+  }
+}
