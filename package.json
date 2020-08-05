@@ -1,29 +1,28 @@
 {
-  "name": "aliceszymanski-app",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
-  },
-  "dependencies": {
-    "@creativebulma/bulma-divider": "^1.1.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@nuxtjs/apollo": "^4.0.1-rc.1",
-    "@nuxtjs/bulma": "^1.3.0",
-    "bulma-timeline": "^3.0.4",
-    "core-js": "^3.6.5",
-    "date-fns": "^2.15.0",
-    "font-awesome": "^4.7.0",
-    "node-sass": "^4.14.1",
-    "nuxt": "^2.14.0",
-    "sass-loader": "^9.0.2"
-  },
-  "devDependencies": {
-    "@fortawesome/free-brands-svg-icons": "^5.14.0",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
-    "@nuxtjs/fontawesome": "^1.1.2"
-  }
+    "name": "aliceszymanski-app",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "generate": "nuxt generate"
+    },
+    "dependencies": {
+        "@creativebulma/bulma-divider": "^1.1.0",
+        "@fortawesome/fontawesome-svg-core": "^1.2.30",
+        "@nuxtjs/apollo": "^4.0.1-rc.1",
+        "@nuxtjs/bulma": "^1.3.0",
+        "bulma-timeline": "^3.0.4",
+        "core-js": "^3.6.5",
+        "date-fns": "^2.15.0",
+        "font-awesome": "^4.7.0",
+        "node-sass": "^4.14.1",
+        "nuxt": "^2.14.0",
+        "sass-loader": "^9.0.2",
+        "@fortawesome/free-brands-svg-icons": "^5.14.0",
+        "@fortawesome/free-solid-svg-icons": "^5.14.0",
+        "@nuxtjs/fontawesome": "^1.1.2"
+    },
+    "devDependencies": {}
 }
