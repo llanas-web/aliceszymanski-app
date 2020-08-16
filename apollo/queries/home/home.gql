@@ -1,16 +1,25 @@
 query {
   home {
     id
-    cover {
+    header {
       id
-      url
+      title
+      description
+      image {
+        id
+        url
+      }
     }
-    description
-    bio
-    bioPhoto { 
+    shortBio {
       id
-      formats
+      title
+      content
+      image {
+        id
+        url
+        formats
+      }
+      imagePosition
     }
-    contact
   }
 }

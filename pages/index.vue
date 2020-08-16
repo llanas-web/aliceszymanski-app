@@ -2,7 +2,7 @@
   <div class="content" v-if="!loading">
     <section
       class="hero is-fullheight-with-navbar coverImage"
-      :style="{backgroundImage: `url(${home.cover.url}`}"
+      :style="{backgroundImage: `url(${home.header.image.url}`}"
     >
       <div class="hero-body">
         <div class="container">
@@ -16,7 +16,7 @@
                 <div class="divider"></div>
                 <h2
                   class="subtitle is-size-6 has-text-grey"
-                  v-html="home.description.replace(/\n/g, '<br />')"
+                  v-html="home.header.description.replace(/\n/g, '<br />')"
                 ></h2>
               </div>
             </div>
@@ -29,11 +29,11 @@
         <div class="container">
           <div class="columns is-centered is-vcentered">
             <div class="column is-7">
-              <p v-html="home.bio.replace(/\n/g, '<br />')"></p>
+              <p v-html="home.shortBio.content.replace(/\n/g, '<br />')"></p>
             </div>
             <div class="column is-3">
               <figure class="image">
-                <img class="is-rounded" :src="home.bioPhoto.formats.small.url" />
+                <img class="is-rounded" :src="home.shortBio.image.formats.small.url" />
               </figure>
             </div>
           </div>
@@ -156,7 +156,7 @@ export default {
   apollo: {
     $loadingKey: "loading",
     home: {
-      //   prefetch: true,
+      prefetch: true,
       query: homeQuery,
     },
     evenements: {
