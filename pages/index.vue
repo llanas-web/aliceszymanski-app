@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content" v-if="!loading">
     <section
       class="hero is-fullheight-with-navbar coverImage"
       :style="{backgroundImage: `url(${home.cover.url}`}"
@@ -147,12 +147,14 @@ import { fr } from "date-fns/locale";
 export default {
   data() {
     return {
+      loading: 0,
       home: {},
       evenements: [],
       closeEvents: [],
     };
   },
   apollo: {
+    $loadingKey: "loading",
     home: {
       //   prefetch: true,
       query: homeQuery,
