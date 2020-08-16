@@ -1,0 +1,10 @@
+query {
+  bio {
+    id
+    full
+    photo {
+      id
+      formats
+    }
+  }
+}
