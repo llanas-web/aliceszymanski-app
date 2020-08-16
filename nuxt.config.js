@@ -1,5 +1,6 @@
 
 export default {
+    components: true,
     env: {
         strapiBaseUri: process.env.API_URL || "http://localhost:1337"
     },
@@ -34,6 +35,7 @@ export default {
     ** Global CSS
     */
     css: [
+        "bulma",
         { src: '~/assets/main.scss', lang: 'scss' }
     ],
     /*
@@ -41,6 +43,7 @@ export default {
     ** https://nuxtjs.org/guide/plugins
     */
     plugins: [
+        "~/plugins/vue-simple-markdown"
     ],
     /*
     ** Auto import components
@@ -64,7 +67,7 @@ export default {
     */
     modules: [
         // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
-        // '@nuxtjs/bulma',
+        '@nuxtjs/bulma',
         "@nuxtjs/apollo"
     ],
     apollo: {

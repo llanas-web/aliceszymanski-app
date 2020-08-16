@@ -24,8 +24,8 @@
         </div>
         <div class="navbar-menu" :class="{'is-active': isBurgerToggled}">
           <div class="navbar-start">
-            <a class="navbar-item has-text-centered">Accueil</a>
-            <a class="navbar-item">Biographie</a>
+            <nuxt-link to="/" class="navbar-item has-text-centered">Accueil</nuxt-link>
+            <nuxt-link to="/biographie" class="navbar-item">Biographie</nuxt-link>
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link is-arrowless">Musique de chambre</a>
               <div class="navbar-dropdown">
@@ -59,9 +59,10 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "~assets/main.scss";
 .navbar {
-  position: absolute;
+  position: absolute !important;
   width: 100%;
   background-image: linear-gradient(
     180deg,

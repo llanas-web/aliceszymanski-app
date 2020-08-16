@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="content">
     <section
-      class="hero is-link is-fullheight coverImage"
+      class="hero is-fullheight coverImage"
       :style="{backgroundImage: `url(${home.cover.url}`}"
     >
       <div class="hero-body">
@@ -40,11 +40,10 @@
         </div>
       </div>
     </section>
-    <section class="hero is-primary is-large">
-      <div class="hero-body">
-        <div class="container is-fluid">
-          <p>Ici il y aura bientot 3 liens vers des pages que tu veux mettre en avant</p>
-        </div>
+    <section class="hero">
+      <div class="hero-body py-0 px-0">
+        <VerticalPresentation />
+        <!-- <p>Ici il y aura bientot 3 liens vers des pages que tu veux mettre en avant</p> -->
       </div>
     </section>
     <section class="hero is-medium">
@@ -52,7 +51,7 @@
         <div class="container is-fluid">
           <div class="timeline is-centered">
             <header class="timeline-header">
-              <span class="tag is-medium is-primary">...</span>
+              <!-- <span class="tag is-medium is-primary">...</span> -->
             </header>
             <div v-for="event in closeEvents" :key="event.id" class="timeline-item is-primary">
               <div class="timeline-marker is-warning"></div>
@@ -83,7 +82,7 @@
               </div>
             </div>-->
             <header class="timeline-header">
-              <span class="tag is-medium is-primary">...</span>
+              <!-- <span class="tag is-medium is-primary">...</span> -->
             </header>
           </div>
         </div>

@@ -12,6 +12,7 @@ $primary: #d0eeed;
 $secondary: #d0e0ee;
 
 // Breakpoints
+$mobile: 550px;
 $tablet: 724px;
 $desktop: 960px + (2 * $gap);
 $widescreen: 1152px + (2 * $gap);
@@ -33,9 +34,21 @@ $divider-margin-inner-size: 0px;
 @import '~@creativebulma/bulma-divider';
 @import '~bulma-timeline';
 
+// html {
+//     scroll-snap-type: y mandatory;
+//     scroll-behavior: smooth;
+// }
+
+// section {
+//     scroll-snap-align: center;
+// }
 
 .coverImage {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.nuxt-link-exact-active {
+    box-shadow: inset 0 5px $yellow;
 }
