@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <section
-      class="hero is-fullheight coverImage"
+      class="hero is-fullheight-with-navbar coverImage"
       :style="{backgroundImage: `url(${home.cover.url}`}"
     >
       <div class="hero-body">
@@ -154,7 +154,7 @@ export default {
   },
   apollo: {
     home: {
-      prefetch: true,
+      //   prefetch: true,
       query: homeQuery,
     },
     evenements: {
@@ -190,7 +190,10 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.navbar {
+  position: absolute !important;
+}
 .title {
   font-family: "Expletus Sans";
 }

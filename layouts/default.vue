@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <nav class="navbar is-transparent" role="navigation">
       <div class="container">
         <div class="navbar-brand">
@@ -59,10 +59,13 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "~assets/main.scss";
+.app {
+  min-height: 100vh;
+}
 .navbar {
-  position: absolute !important;
+  //   position: absolute !important;
   width: 100%;
   background-image: linear-gradient(
     180deg,
