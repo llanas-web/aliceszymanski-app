@@ -42,7 +42,7 @@
     </section>
     <section class="hero">
       <div class="hero-body py-0 px-0">
-        <VerticalPresentation />
+        <HorizontalGallery />
         <!-- <p>Ici il y aura bientot 3 liens vers des pages que tu veux mettre en avant</p> -->
       </div>
     </section>
