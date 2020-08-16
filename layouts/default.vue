@@ -83,5 +83,6 @@ export default {
 
 .navbar-item {
   min-width: 180px;
+  justify-content: center;
 }
 </style>
