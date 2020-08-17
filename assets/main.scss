@@ -17,8 +17,8 @@ $tablet: 724px;
 $desktop: 960px + (2 * $gap);
 $widescreen: 1152px + (2 * $gap);
 
-$family-sans-serif: 'Duru Sans', sans-serif;
-$family-secondary: 'Expletus Sans', cursive;
+$family-sans-serif: 'Source Sans Pro', sans-serif;
+$family-secondary: 'Playfair Display', cursive;
 
 $footer-padding: 1rem 1.5rem;
 $footer-background-color: $grey;
@@ -44,6 +44,7 @@ $divider-margin-inner-size: 0px;
 // }
 
 .coverImage {
+    height:100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

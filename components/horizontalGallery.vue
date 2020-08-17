@@ -85,7 +85,7 @@ const _videoEventListener = function () {
 @import "~assets/main.scss";
 .gallery-container {
   display: flex;
-  height: 100vh;
+  height: 80vh;
   flex-direction: column;
 }
 
@@ -119,7 +119,7 @@ const _videoEventListener = function () {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 80vh;
+  height: 60vh;
   flex-direction: column;
 
   .item-button {

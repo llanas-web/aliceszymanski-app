@@ -1,10 +1,17 @@
 query {
   bio {
     id
-    full
     photo {
       id
+      url
       formats
+    }
+    firstPart
+    secondPart
+    activities {
+        id
+        title
+        content
     }
   }
 }

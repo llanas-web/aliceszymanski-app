@@ -41,11 +41,6 @@
       </div>
     </nav>
     <Nuxt />
-    <footer class="footer">
-      <div class="content has-text-white has-text-centered">
-        <p>@llanas-web</p>
-      </div>
-    </footer>
   </div>
 </template>
 
