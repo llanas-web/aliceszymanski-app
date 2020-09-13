@@ -1,29 +1,6 @@
 <template>
   <div class="content" v-if="!loading">
-    <section
-      class="hero is-fullheight-with-navbar coverImage"
-      :style="{backgroundImage: `url(${home.header.image.url}`}"
-    >
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns">
-            <div class="column is-one-third is-offset-7 is-hidden-mobile">
-              <div class="box">
-                <p class="title is-size-1 is-size-3-mobile has-text-centered has-text-warning">Alice</p>
-                <p
-                  class="title is-size-1 is-size-3-mobile has-text-centered has-text-grey"
-                >SZYMANSKI</p>
-                <div class="divider"></div>
-                <h2
-                  class="subtitle is-size-6 has-text-grey"
-                  v-html="home.header.description.replace(/\n/g, '<br />')"
-                ></h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <CustomHeader :strapi-header="home.header"></CustomHeader>
     <section id="short-bio" class="hero is-medium">
       <div class="hero-body">
         <div class="container">
