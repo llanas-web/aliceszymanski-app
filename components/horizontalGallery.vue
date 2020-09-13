@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="gallery-container">
+      <div class="gallery-item" :style="{backgroundImage: `url(${backgroundImages[2]})`}"></div>
       <div
         class="gallery-item has-text-centered"
         :style="{backgroundImage: (videoInProgress) ? '' : `url(${backgroundImages[0]})`}"
@@ -32,7 +33,6 @@
       <div class="gallery-item" :style="{backgroundImage: `url(${backgroundImages[1]})`}">
         <div class="image-content"></div>
       </div>
-      <div class="gallery-item" :style="{backgroundImage: `url(${backgroundImages[2]})`}"></div>
     </div>
   </div>
 </template>
