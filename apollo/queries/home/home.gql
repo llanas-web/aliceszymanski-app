@@ -13,13 +13,21 @@ query {
     shortBio {
       id
       title
-      content
-      image {
+      displayAsColumn
+      listContents {
         id
-        url
-        formats
+        title
+        text
       }
-      imagePosition
+      isJustified
+      isCentered
+      medias {
+        id
+        name
+        formats
+        url
+        mime
+      }
     }
   }
 }

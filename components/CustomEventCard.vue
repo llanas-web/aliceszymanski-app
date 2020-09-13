@@ -14,9 +14,7 @@
       </div>
 
       <div class="content">
-        {{strapiEvent.description}}
-        <br />
-        <br />
+        <vue-simple-markdown :source="strapiEvent.description"></vue-simple-markdown>
         <time datetime="2016-1-1">{{strapiEvent.formatedDate}}</time>
       </div>
     </div>
@@ -31,4 +29,7 @@ export default {
 </script>
 
 <style>
+.card {
+  min-height: 100%;
+}
 </style>

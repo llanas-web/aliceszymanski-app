@@ -6,12 +6,41 @@ query {
       url
       formats
     }
-    firstPart
-    secondPart
-    activities {
+    resume {
+      id
+      title
+      displayAsColumn
+      listContents {
         id
         title
-        content
+        text
+      }
+      isJustified
+      isCentered
+      medias {
+        id
+        name
+        url
+      }
+    }
+    activities {
+      id
+      title
+      displayAsColumn
+      listContents {
+        id
+        title
+        text
+      }
+      isJustified
+      isCentered
+      medias {
+        id
+        name
+        formats
+        url
+        mime
+      }
     }
   }
 }

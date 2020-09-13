@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <nav class="navbar" role="navigation">
+    <nav class="navbar is-transparent" role="navigation">
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item is-hidden-tablet">
@@ -60,14 +60,7 @@ export default {
   min-height: 100vh;
 }
 .navbar {
-  //   position: absolute !important;
   width: 100%;
-  //   background-image: linear-gradient(
-  //     180deg,
-  //     rgba(255, 255, 255, 1) 0%,
-  //     rgba(255, 255, 255, 0.65) 65%,
-  //     rgba(0, 212, 255, 0) 100%
-  //   );
 }
 
 .navbar-start {

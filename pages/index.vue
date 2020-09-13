@@ -1,7 +1,8 @@
 <template>
   <div class="content" v-if="!loading">
     <CustomHeader :strapi-header="home.header"></CustomHeader>
-    <section id="short-bio" class="hero is-medium">
+    <CustomTextZone :strapi-text-zone="home.shortBio"></CustomTextZone>
+    <!-- <section id="short-bio" class="hero is-medium">
       <div class="hero-body">
         <div class="container">
           <div class="columns is-centered is-vcentered">
@@ -13,7 +14,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section>-->
     <section class="hero">
       <div class="hero-body py-0 px-0">
         <HorizontalGallery />

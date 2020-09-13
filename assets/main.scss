@@ -10,6 +10,9 @@ $grey: #606060;
 // Colours
 $primary: #d0eeed;
 $secondary: #d0e0ee;
+$link: $yellow;
+
+$body-background-color: #f9f9f9;
 
 // Breakpoints
 $mobile: 550px;
@@ -20,14 +23,21 @@ $widescreen: 1152px + (2 * $gap);
 $family-sans-serif: 'Source Sans Pro', sans-serif;
 $family-secondary: 'Playfair Display', cursive;
 
+$navbar-background-color: #fff0;
+
 $footer-padding: 1rem 1.5rem;
 $footer-background-color: $grey;
 
-$navbar-background-color: #fff0;
 $divider-background-color: $yellow;
 $divider-color: $yellow;
 $divider-thickness: 2rem;
 $divider-margin-inner-size: 0px;
+
+$button-border-color: $yellow;
+$button-border-width: 2px;
+$button-hover-border-color: $yellow;
+$button-background-color: #f9f9f9;
+$button-family: 'Playfair Display', cursive;
 
 /* Import the rest of Bulma */
 @import '~bulma';
