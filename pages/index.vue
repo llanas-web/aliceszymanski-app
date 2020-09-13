@@ -17,7 +17,6 @@
     <section class="hero">
       <div class="hero-body py-0 px-0">
         <HorizontalGallery />
-        <!-- <p>Ici il y aura bientot 3 liens vers des pages que tu veux mettre en avant</p> -->
       </div>
     </section>
     <section class="hero is-medium">
@@ -30,29 +29,7 @@
                 enter-active-class="animate__animated animate__fadeIn"
                 leave-active-class="animate__animated animate__fadeOut"
               >
-                <div v-if="eventHover != null" class="card">
-                  <div class="card-image" v-if="eventHover.image != null">
-                    <div
-                      class="image is-4by3 coverImage"
-                      :style="{backgroundImage: 'url(' + eventHover.image.url + ')'}"
-                    ></div>
-                  </div>
-                  <div class="card-content">
-                    <div class="media ml-5">
-                      <div class="media-content">
-                        <p class="title is-4">{{eventHover.title}}</p>
-                        <p class="subtitle is-6">On peut mettre ici ou c'est ?</p>
-                      </div>
-                    </div>
-
-                    <div class="content">
-                      {{eventHover.description}}
-                      <br />
-                      <br />
-                      <time datetime="2016-1-1">{{eventHover.formatedDate}}</time>
-                    </div>
-                  </div>
-                </div>
+                <CustomEventCard v-if="eventHover" :strapi-event="eventHover" />
               </transition>
             </div>
             <div class="column is-5">

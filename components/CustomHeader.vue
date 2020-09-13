@@ -1,6 +1,5 @@
 <template>
   <header
-    v-if="strapiHeader != undefined"
     class="hero is-fullheight-with-navbar coverImage"
     :style="{backgroundImage: `url(${strapiHeader.image.url}`}"
   >
