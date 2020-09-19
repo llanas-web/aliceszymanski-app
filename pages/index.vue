@@ -2,19 +2,6 @@
   <div class="content" v-if="!loading">
     <CustomHeader :strapi-header="home.header"></CustomHeader>
     <CustomTextZone :strapi-text-zone="home.shortBio"></CustomTextZone>
-    <!-- <section id="short-bio" class="hero is-medium">
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns is-centered is-vcentered">
-            <div class="column is-9 has-text-centered">
-              <p class="is-size-2 is-family-secondary is-uppercase">Biographie</p>
-              <br />
-              <p v-html="home.shortBio.content.replace(/\n/g, '<br />')"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>-->
     <section class="hero">
       <div class="hero-body py-0 px-0">
         <HorizontalGallery />
@@ -56,30 +43,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- <div class="timeline-item is-warning">
-              <div class="timeline-marker is-warning is-image is-32x32">
-                <img src="https://bulma.io/images/placeholders/32x32.png" />
-              </div>
-              <div class="timeline-content">
-                <p class="heading">February 2016</p>
-                <p>Timeline content - Can include any HTML element</p>
-              </div>
-            </div>
-            <header class="timeline-header">
-              <span class="tag is-primary">2017</span>
-            </header>
-            <div class="timeline-item is-danger">
-              <div class="timeline-marker is-danger is-icon">
-                <i class="fa fa-flag"></i>
-              </div>
-              <div class="timeline-content">
-                <p class="heading">March 2017</p>
-                <p>Timeline content - Can include any HTML element</p>
-              </div>
-                </div>-->
-                <header class="timeline-header">
-                  <!-- <span class="tag is-medium is-primary">...</span> -->
-                </header>
+                <header class="timeline-header"></header>
               </div>
             </div>
           </div>
@@ -197,6 +161,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~/assets/main.scss";
+
 #short-bio {
   -webkit-box-shadow: inset 20px 20px 30px 0px rgba(0, 0, 0, 0.12);
   -moz-box-shadow: inset 20px 20px 30px 0px rgba(0, 0, 0, 0.12);

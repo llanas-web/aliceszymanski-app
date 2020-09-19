@@ -5,6 +5,7 @@ query {
     description
     starting
     ending
+    cancelled
     image {
         url
       formats
