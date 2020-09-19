@@ -1,6 +1,12 @@
 <template>
   <section class="hero is-medium">
-    <div class="hero-body py-1 px-1">
+    <div
+      class="hero-body px-1"
+      :class="[
+        (Number(paddingY) != NaN) ? 'py-' + paddingY : '',
+        (Number(paddingX) != NaN) ? 'px-' + paddingX : '',
+    ]"
+    >
       <div class="container">
         <div>
           <div v-if="strapiTextZone.title">
@@ -69,7 +75,7 @@
 <script>
 export default {
   name: "CustomTextZone",
-  props: ["strapi-text-zone"],
+  props: ["strapi-text-zone", "padding-y", "padding-x"],
 };
 </script>
 
