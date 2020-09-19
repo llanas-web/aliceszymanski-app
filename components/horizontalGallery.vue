@@ -60,9 +60,11 @@ export default {
   methods: {
     videoStart() {
       if (!this.videoPlayed) {
-        console.log("PLAY");
-        this.videoInProgress = true;
-        this.$refs.videoContent.play();
+        setTimeout(() => {
+          console.log("PLAY");
+          this.videoInProgress = true;
+          this.$refs.videoContent.play();
+        }, 1000);
       }
     },
     videoStop() {
