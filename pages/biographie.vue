@@ -1,8 +1,8 @@
 <template>
   <div class="container is-widescreen mt-6">
     <section class="hero is-fullheight-with-navbar">
-      <div class="biographie-columns columns is-centered" style="height: 50vh;">
-        <div class="column is-10">
+      <div class="columns is-centered" style="height: 50vh;">
+        <div class="column is-10" v-if="bio.photo != undefined">
           <div
             class="coverImage my-4 is-hidden-touch"
             :style="{backgroundImage: 'url(' + bio.photo.url + ')'}"

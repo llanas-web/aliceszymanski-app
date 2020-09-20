@@ -29,9 +29,12 @@
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link is-arrowless">Musique de chambre</a>
               <div class="navbar-dropdown">
-                <a class="navbar-item">Trio Zerline</a>
-                <a class="navbar-item">Duo Baroque</a>
-                <a class="navbar-item">Duo Flute et Guitare</a>
+                <nuxt-link
+                  v-for="page in pages"
+                  :key="page.id"
+                  class="navbar-item"
+                  :to="{ name: 'musique-de-chambre-url', params: { url: page.url, selected: page }}"
+                >{{page.title}}</nuxt-link>
               </div>
             </div>
             <a class="navbar-item">Calendrier</a>
@@ -45,11 +48,20 @@
 </template>
 
 <script>
+import pagesQuery from "~/apollo/queries/page/pages";
+
 export default {
   data() {
     return {
+      pages: [],
       isBurgerToggled: false,
     };
+  },
+  apollo: {
+    pages: {
+      prefetch: true,
+      query: pagesQuery,
+    },
   },
 };
 </script>

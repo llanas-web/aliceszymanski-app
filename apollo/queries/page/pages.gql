@@ -1,0 +1,35 @@
+query {
+  pages {
+    id
+    url
+    title
+    header {
+      id
+      description
+      image {
+        id
+        url
+        formats
+      }
+    }
+    content {
+      id
+      title
+      listContents {
+        id
+        title
+        text
+      }
+      displayAsColumn
+      isJustified
+      isCentered
+      medias {
+        id
+        name
+        formats
+        url
+        mime
+      }
+    }
+  }
+}
