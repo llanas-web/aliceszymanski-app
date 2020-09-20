@@ -3,7 +3,10 @@
     <section class="hero is-fullheight-with-navbar">
       <div class="biographie-columns columns is-centered" style="height: 50vh;">
         <div class="column is-10">
-          <div class="coverImage my-4" :style="{backgroundImage: 'url(' + bio.photo.url + ')'}" />
+          <div
+            class="coverImage my-4 is-hidden-touch"
+            :style="{backgroundImage: 'url(' + bio.photo.url + ')'}"
+          />
           <div class="mt-6">
             <CustomTextZone :strapi-text-zone="bio.resume" padding-y="1"></CustomTextZone>
           </div>
@@ -38,6 +41,4 @@ export default {
 </script>
 
 <style lang="scss">
-.biographie-columns {
-}
 </style>
