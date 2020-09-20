@@ -1,15 +1,15 @@
 <template>
   <div class="container is-widescreen mt-6">
     <section class="hero is-fullheight-with-navbar">
-      <div class="columns is-centered" style="height: 50vh;">
+      <div class="biographie-columns columns is-centered" style="height: 50vh;">
         <div class="column is-10">
           <div class="coverImage my-4" :style="{backgroundImage: 'url(' + bio.photo.url + ')'}" />
-          <div class="columns mt-6">
-            <CustomTextZone :strapi-text-zone="bio.resume"></CustomTextZone>
+          <div class="mt-6">
+            <CustomTextZone :strapi-text-zone="bio.resume" padding-y="1"></CustomTextZone>
           </div>
           <div class="divider"></div>
           <div v-for="(activity, index) in bio.activities" :key="activity.id" class="mt-6">
-            <CustomTextZone :strapi-text-zone="activity"></CustomTextZone>
+            <CustomTextZone :strapi-text-zone="activity" padding-y="1"></CustomTextZone>
             <div v-if="bio.activities.length - 1 != index" class="divider"></div>
           </div>
         </div>
@@ -38,4 +38,6 @@ export default {
 </script>
 
 <style lang="scss">
+.biographie-columns {
+}
 </style>

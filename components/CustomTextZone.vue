@@ -1,10 +1,10 @@
 <template>
   <section class="hero is-medium">
     <div
-      class="hero-body px-1"
+      class="hero-body"
       :class="[
-        (Number(paddingY) != NaN) ? 'py-' + paddingY : '',
-        (Number(paddingX) != NaN) ? 'px-' + paddingX : '',
+        (paddingY != undefined) ? 'py-' + paddingY : '',
+        (paddingX != undefined) ? 'px-' + paddingX : '',
     ]"
     >
       <div class="container">
