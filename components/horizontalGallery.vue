@@ -1,10 +1,15 @@
 <template>
   <div>
     <div class="gallery-container">
-      <div class="gallery-item" :style="{backgroundImage: `url(${backgroundImages[2]})`}"></div>
+      <div
+        class="gallery-item"
+        :style="{ backgroundImage: `url(${backgroundImages[2]})` }"
+      ></div>
       <div
         class="gallery-item has-text-centered"
-        :style="{backgroundImage: (videoInProgress) ? '' : `url(${backgroundImages[0]})`}"
+        :style="{
+          backgroundImage: videoInProgress ? '' : `url(${backgroundImages[0]})`,
+        }"
         @mouseenter="videoStart()"
         @mouseleave="videoStop()"
       >
@@ -21,16 +26,26 @@
             />
           </video>
           <div class="item-button">
-            <button class="button" @click="isMuted = !isMuted" v-show="!!videoInProgress">
+            <button
+              class="button"
+              @click="isMuted = !isMuted"
+              v-show="!!videoInProgress"
+            >
               <span class="icon" v-show="!!videoInProgress">
-                <font-awesome-icon v-if="isMuted" :icon="['fas', 'volume-mute']" />
+                <font-awesome-icon
+                  v-if="isMuted"
+                  :icon="['fas', 'volume-mute']"
+                />
                 <font-awesome-icon v-else :icon="['fas', 'volume-up']" />
               </span>
             </button>
           </div>
         </div>
       </div>
-      <div class="gallery-item" :style="{backgroundImage: `url(${backgroundImages[1]})`}">
+      <div
+        class="gallery-item"
+        :style="{ backgroundImage: `url(${backgroundImages[1]})` }"
+      >
         <div class="image-content"></div>
       </div>
     </div>
@@ -49,6 +64,7 @@ export default {
       isMuted: true,
       videoPlayed: false,
       videoInProgress: false,
+      timeoutId: 0,
     };
   },
   mounted() {
@@ -60,7 +76,7 @@ export default {
   methods: {
     videoStart() {
       if (!this.videoPlayed) {
-        setTimeout(() => {
+        this.timeoutId = setTimeout(() => {
           console.log("PLAY");
           this.videoInProgress = true;
           this.$refs.videoContent.play();
@@ -68,6 +84,7 @@ export default {
       }
     },
     videoStop() {
+      clearTimeout(this.timeoutId);
       if (!this.videoPlayed) {
         console.log("PAUSE");
         this.$refs.videoContent.pause();
