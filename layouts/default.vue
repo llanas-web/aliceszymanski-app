@@ -14,7 +14,7 @@
             class="navbar-burger burger"
             aria-label="menu"
             aria-expanded="false"
-            :class="{'is-active': isBurgerToggled}"
+            :class="{ 'is-active': isBurgerToggled }"
             v-on:click="isBurgerToggled = !isBurgerToggled"
           >
             <span aria-hidden="true"></span>
@@ -22,10 +22,14 @@
             <span aria-hidden="true"></span>
           </a>
         </div>
-        <div class="navbar-menu" :class="{'is-active': isBurgerToggled}">
+        <div class="navbar-menu" :class="{ 'is-active': isBurgerToggled }">
           <div class="navbar-start">
-            <nuxt-link to="/" class="navbar-item has-text-centered">Accueil</nuxt-link>
-            <nuxt-link to="/biographie" class="navbar-item">Biographie</nuxt-link>
+            <nuxt-link to="/" class="navbar-item has-text-centered"
+              >Accueil</nuxt-link
+            >
+            <nuxt-link to="/biographie" class="navbar-item"
+              >Biographie</nuxt-link
+            >
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link is-arrowless">Musique de chambre</a>
               <div class="navbar-dropdown">
@@ -33,8 +37,12 @@
                   v-for="page in pages"
                   :key="page.id"
                   class="navbar-item"
-                  :to="{ name: 'musique-de-chambre-url', params: { url: page.url, selected: page }}"
-                >{{page.title}}</nuxt-link>
+                  :to="{
+                    name: 'musique-de-chambre-url',
+                    params: { url: page.url, selected: page },
+                  }"
+                  >{{ page.title }}</nuxt-link
+                >
               </div>
             </div>
             <a class="navbar-item">Calendrier</a>
@@ -73,6 +81,7 @@ export default {
 }
 .navbar {
   width: 100%;
+  font-family: $family-secondary;
 }
 
 .navbar-start {
@@ -84,5 +93,12 @@ export default {
 .navbar-item {
   min-width: 180px;
   justify-content: center;
+}
+
+@media screen and (min-width: $desktop) {
+  .navbar-start > .nuxt-link-exact-active {
+    text-decoration: underline;
+    box-shadow: inset 0 5px $yellow;
+  }
 }
 </style>

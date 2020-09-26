@@ -1,6 +1,25 @@
 <template>
   <div class="content" v-if="!loading">
-    <CustomHeader :strapi-header="home.header"></CustomHeader>
+    <header
+      class="hero is-fullheight-with-navbar coverImage"
+      :style="{ backgroundImage: `url(${home.header.image.url}` }"
+    >
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-half has-text-right header-text">
+              <p>
+                <span class="title-alice">Alice</span><br /><span
+                  class="title-szymanski"
+                >
+                  SZYMANSKI
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
     <CustomTextZone :strapi-text-zone="home.shortBio"></CustomTextZone>
     <section class="hero">
       <div class="hero-body py-0 px-0">
@@ -25,7 +44,11 @@
                 <header class="timeline-header">
                   <!-- <span class="tag is-medium is-primary">...</span> -->
                 </header>
-                <div v-for="event in closeEvents" :key="event.id" class="timeline-item is-primary">
+                <div
+                  v-for="event in closeEvents"
+                  :key="event.id"
+                  class="timeline-item is-primary"
+                >
                   <div class="timeline-marker is-warning"></div>
                   <div class="timeline-content">
                     <div class="box" @mouseenter="eventHover = event">
@@ -33,9 +56,11 @@
                         <div class="media-content">
                           <div class="content">
                             <p>
-                              <small>{{event.formatedDate}}</small>
+                              <small>{{ event.formatedDate }}</small>
                               <br />
-                              <strong class="is-family-secondary">{{event.title}}</strong>
+                              <strong class="is-family-secondary">{{
+                                event.title
+                              }}</strong>
                             </p>
                           </div>
                         </div>
@@ -66,7 +91,9 @@
                     </p>
                   </div>
                   <div class="field">
-                    <p class="control is-expanded has-icons-left has-icons-right">
+                    <p
+                      class="control is-expanded has-icons-left has-icons-right"
+                    >
                       <input class="input" type="email" placeholder="Email" />
                       <span class="icon is-small is-left">
                         <font-awesome-icon :icon="['fas', 'envelope']" />
@@ -82,7 +109,10 @@
                 <div class="field-body">
                   <div class="field">
                     <div class="control">
-                      <textarea class="textarea" placeholder="Votre Message"></textarea>
+                      <textarea
+                        class="textarea"
+                        placeholder="Votre Message"
+                      ></textarea>
                     </div>
                   </div>
                 </div>
@@ -173,6 +203,16 @@ export default {
 }
 .title {
   font-family: "Expletus Sans";
+}
+.header-text {
+  font-family: "Cinzel", serif;
+  font-size: 5rem !important;
+  .title-alice {
+    color: #e6c555 !important;
+  }
+  .title-szymanski {
+    color: #d0d0ad !important;
+  }
 }
 
 .timeline-marker {

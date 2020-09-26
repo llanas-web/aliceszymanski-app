@@ -27,7 +27,7 @@ export default {
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-            { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Duru+Sans&family=Expletus+Sans:wght@400&family=Playfair+Display&family=Source+Sans+Pro&display=swap" },
+            { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Duru+Sans&family=Expletus+Sans:wght@400&family=Playfair+Display&family=Source+Sans+Pro&family=Cinzel:wght@400;500;600;700&display=swap" },
             { rel: 'stylesheet', href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" },
             { src: 'font-awesome/scss/font-awesome.scss', lang: 'scss' }
         ]

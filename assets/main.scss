@@ -4,7 +4,7 @@
 
 /* Variable changes go here */
 
-$yellow: #FFDB5E;
+$yellow: #ffd650;
 $grey: #606060;
 
 // Colours
@@ -22,6 +22,8 @@ $widescreen: 1152px + (2 * $gap);
 
 $family-sans-serif: 'Source Sans Pro', sans-serif;
 $family-secondary: 'Playfair Display', cursive;
+$family-third: 'Cinzel', serif;
+
 
 $navbar-background-color: #fff0;
 
@@ -58,10 +60,4 @@ $button-family: 'Playfair Display', cursive;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-@media screen and (min-width: $desktop) {
-    .nuxt-link-exact-active {
-        box-shadow: inset 0 5px $yellow;
-    }
 }
