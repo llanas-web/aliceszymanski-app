@@ -39,7 +39,7 @@
                   class="navbar-item"
                   :to="{
                     name: 'musique-de-chambre-url',
-                    params: { url: page.url, selected: page },
+                    params: { url: page.url },
                   }"
                   >{{ page.title }}</nuxt-link
                 >
@@ -52,6 +52,7 @@
       </div>
     </nav>
     <Nuxt />
+    <footer></footer>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
-query Pages($id: ID!) {
-  page(id: $id) {
+query Pages($url: ID!) {
+  pages(where: {url: $url}) {
     id
     url
     title

@@ -1,37 +1,61 @@
 <template>
-  <div class="container is-widescreen mt-6">
-    <section class="hero is-fullheight-with-navbar">
-      <div class="columns is-centered" style="height: 50vh;">
-        <div class="column is-10" v-if="page != undefined">
-          <div
-            class="coverImage my-4 is-hidden-touch"
-            :style="{backgroundImage: 'url(' + page.header.image.url + ')'}"
-          />
-          <div v-for="(content, index) in page.content" :key="content.id" class="mt-6">
-            <CustomTextZone :strapi-text-zone="content" padding-y="1" padding-x="3"></CustomTextZone>
-            <div v-if="page.content.length - 1 != index" class="divider"></div>
-          </div>
-        </div>
+  <div class="content" v-if="pages != null && pages.length > 0">
+    <section class="section">
+      <div class="container is-widescreen is-centered" style="height: 50vh">
+        <div
+          class="coverImage my-4 is-hidden-touch"
+          :style="{
+            backgroundImage: 'url(' + pages[0].header.image.url + ')',
+          }"
+        />
+        <span class="title">{{ pages[0].title }}</span>
+      </div>
+    </section>
+    <section
+      class="section mt-4"
+      v-for="(content, index) in pages[0].content"
+      :key="content.id"
+    >
+      <div class="container is-widescreen is-centered">
+        <CustomTextZone
+          :strapi-text-zone="content"
+          padding-y="1"
+          padding-x="3"
+        ></CustomTextZone>
+        <div v-if="pages[0].content.length - 1 != index" class="divider"></div>
       </div>
     </section>
   </div>
 </template>
 
 <script>
+import pageQuery from "~/apollo/queries/page/page";
 import "vue-simple-markdown/dist/vue-simple-markdown.css";
 
 export default {
   data() {
     return {
-      page: this.$route.params.selected,
+      pages: [],
     };
   },
-  props: ["url", "selected"],
+  apollo: {
+    pages: {
+      prefetch: true,
+      query: pageQuery,
+      variables() {
+        return { url: this.$route.params.url };
+      },
+    },
+  },
+  props: ["url"],
 };
 </script>
 
-<style scoped>
-.container {
-  max-width: 100%;
+<style lang="scss" scoped>
+@import "~/assets/main.scss";
+
+.title {
+  font-size: 3rem;
+  font-family: $title-2;
 }
 </style>
