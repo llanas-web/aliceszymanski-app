@@ -30,22 +30,9 @@
             <nuxt-link to="/biographie" class="navbar-item"
               >Biographie</nuxt-link
             >
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link is-arrowless">Musique de chambre</a>
-              <div class="navbar-dropdown">
-                <nuxt-link
-                  v-for="page in pages"
-                  :key="page.id"
-                  class="navbar-item"
-                  :to="{
-                    name: 'musique-de-chambre-url',
-                    params: { url: page.url },
-                  }"
-                  >{{ page.title }}</nuxt-link
-                >
-              </div>
-            </div>
-            <a class="navbar-item">Calendrier</a>
+            <nuxt-link to="/musique-de-chambre" class="navbar-item"
+              >Musique de chambre</nuxt-link
+            >
             <a class="navbar-item">Contact</a>
           </div>
         </div>
@@ -57,20 +44,11 @@
 </template>
 
 <script>
-import pagesQuery from "~/apollo/queries/page/pages";
-
 export default {
   data() {
     return {
-      pages: [],
       isBurgerToggled: false,
     };
-  },
-  apollo: {
-    pages: {
-      prefetch: true,
-      query: pagesQuery,
-    },
   },
 };
 </script>
@@ -83,6 +61,9 @@ export default {
 .navbar {
   width: 100%;
   font-family: $family-secondary;
+
+  box-shadow: 0 0.5em 1em -0.125em rgba($scheme-invert, 0.1),
+    0 0px 0 1px rgba($scheme-invert, 0.02);
 }
 
 .navbar-start {
@@ -94,12 +75,5 @@ export default {
 .navbar-item {
   min-width: 180px;
   justify-content: center;
-}
-
-@media screen and (min-width: $desktop) {
-  .navbar-start > .nuxt-link-exact-active {
-    text-decoration: underline;
-    box-shadow: inset 0 5px $yellow;
-  }
 }
 </style>

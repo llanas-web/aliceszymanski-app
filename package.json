@@ -23,6 +23,8 @@
         "node-sass": "^4.14.1",
         "nuxt": "^2.14.0",
         "sass-loader": "^9.0.3",
+        "swiper": "^6.3.4",
+        "vue-awesome-swiper": "^4.1.1",
         "vue-simple-markdown": "^1.1.4"
     },
     "devDependencies": {}

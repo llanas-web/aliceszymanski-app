@@ -5,7 +5,7 @@
         <div
           class="coverImage my-4 is-hidden-touch"
           :style="{
-            backgroundImage: 'url(' + pages[0].header.image.url + ')',
+            backgroundImage: 'url(' + page.header.image.url + ')',
           }"
         />
         <span class="title">{{ pages[0].title }}</span>
@@ -42,9 +42,6 @@ export default {
     pages: {
       prefetch: true,
       query: pageQuery,
-      variables() {
-        return { url: this.$route.params.url };
-      },
     },
   },
   props: ["url"],

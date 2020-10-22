@@ -44,7 +44,8 @@ export default {
     ** https://nuxtjs.org/guide/plugins
     */
     plugins: [
-        "~/plugins/vue-simple-markdown"
+        "~/plugins/vue-simple-markdown",
+        "~/plugins/vue-awesome-swiper"
     ],
     /*
     ** Auto import components
