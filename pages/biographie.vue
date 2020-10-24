@@ -7,22 +7,20 @@
             class="coverImage my-4 is-hidden-touch"
             :style="{ backgroundImage: 'url(' + bio.photo.url + ')' }"
           />
-          <div class="mt-6">
+          <div class="py-5">
             <CustomTextZone
               :strapi-text-zone="bio.resume"
               padding-y="1"
             ></CustomTextZone>
           </div>
           <div class="divider"></div>
-          <div
-            v-for="(activity, index) in bio.activities"
-            :key="activity.id"
-            class="mt-6"
-          >
-            <CustomTextZone
-              :strapi-text-zone="activity"
-              padding-y="1"
-            ></CustomTextZone>
+          <div v-for="(activity, index) in bio.activities" :key="activity.id">
+            <div class="py-5">
+              <CustomTextZone
+                :strapi-text-zone="activity"
+                padding-y="1"
+              ></CustomTextZone>
+            </div>
             <div
               v-if="bio.activities.length - 1 != index"
               class="divider"

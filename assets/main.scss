@@ -39,6 +39,9 @@ $divider-margin-inner-size: 0px;
 $button-border-color: $yellow;
 $button-border-width: 2px;
 $button-hover-border-color: $yellow;
+$button-focus-color: $yellow;
+$button-focus-border-color: $yellow;
+$button-focus-box-shadow-size: 0;
 $button-background-color: #f9f9f9;
 $button-family: 'Playfair Display', cursive;
 
@@ -61,4 +64,19 @@ $button-family: 'Playfair Display', cursive;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.shadow-light {
+    box-shadow: 0 0.5em 1em -0.125em rgba($scheme-invert, 0.1),
+    0 0px 0 1px rgba($scheme-invert, 0.02);
+}
+
+.shadow-semibold {
+    box-shadow: 0 0.5em 1em -0.125em rgba($scheme-invert, 0.4),
+    0 0px 0 1px rgba($scheme-invert, 0.1);
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: none;
 }

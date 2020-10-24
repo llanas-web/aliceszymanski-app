@@ -7,7 +7,9 @@
       <div class="hero-body">
         <div class="container">
           <div class="columns">
-            <div class="column is-half has-text-right header-text">
+            <div
+              class="column is-half has-text-right header-text is-hidden-touch"
+            >
               <p>
                 <span class="title-alice">Alice</span><br /><span
                   class="title-szymanski"
@@ -23,7 +25,10 @@
     <CustomTextZone :strapi-text-zone="home.shortBio"></CustomTextZone>
     <section class="hero">
       <div class="hero-body py-0 px-0">
-        <HorizontalGallery />
+        <FlexGallery
+          v-if="home.musiqueDeChambreGallery != null"
+          :gallery-list-items="home.musiqueDeChambreGallery"
+        />
       </div>
     </section>
     <section class="hero is-medium">

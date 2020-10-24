@@ -1,9 +1,9 @@
 <template>
   <div class="app">
-    <nav class="navbar is-transparent" role="navigation">
+    <nav class="navbar is-transparent shadow-light" role="navigation">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item is-hidden-tablet">
+          <a class="navbar-item is-hidden-desktop">
             <p>
               Alice
               <i>SZYMANSKI</i>
@@ -61,9 +61,6 @@ export default {
 .navbar {
   width: 100%;
   font-family: $family-secondary;
-
-  box-shadow: 0 0.5em 1em -0.125em rgba($scheme-invert, 0.1),
-    0 0px 0 1px rgba($scheme-invert, 0.02);
 }
 
 .navbar-start {

@@ -29,5 +29,28 @@ query {
         mime
       }
     }
+    musiqueDeChambreGallery {
+        id
+        page {
+          id
+          title
+          url
+          header {
+            id
+            title
+            image {
+              id
+              formats
+              url
+            }
+          }
+        }
+        background {
+          id
+          url
+          mime
+          formats 
+        }
+    }
   }
 }
