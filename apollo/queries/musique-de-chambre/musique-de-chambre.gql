@@ -6,33 +6,42 @@ query {
             url
             title
             header {
-            id
-            description
-            image {
                 id
-                url
-                formats
-            }
+                description
+                image {
+                    id
+                    url
+                    formats
+                }
             }
             content {
-            id
-            title
-            listContents {
                 id
                 title
-                text
+                listContents {
+                    id
+                    title
+                    text
+                }
+                displayAsColumn
+                isJustified
+                isCentered
+                medias {
+                    id
+                    name
+                    formats
+                    url
+                    mime
+                }
             }
-            displayAsColumn
-            isJustified
-            isCentered
-            medias {
-                id
+            members {
                 name
-                formats
-                url
-                mime
+                work
+                profil {
+                    id
+                    formats
+                }
             }
-            }
+            soundcloudLink
         }
     }
 }

@@ -6,11 +6,12 @@
 
 $yellow: #ffd650;
 $grey: #606060;
+$deepblue: #01999e;
 
 // Colours
 $primary: #d0eeed;
 $secondary: #d0e0ee;
-$link: $yellow;
+$link: $deepblue;
 
 $body-background-color: #f9f9f9;
 
@@ -25,11 +26,11 @@ $family-secondary: 'Playfair Display', cursive;
 $family-third: 'Cinzel', serif;
 $title-2: 'EB Garamond', serif;
 
-
-$navbar-background-color: #fff0;
+$navbar-background-color:#f9f9f9;
+$navbar-height: 5rem;
 
 $footer-padding: 1rem 1.5rem;
-$footer-background-color: $grey;
+$footer-background-color: #f9f9f9;
 
 $divider-background-color: $yellow;
 $divider-color: $yellow;
@@ -59,6 +60,10 @@ $button-family: 'Playfair Display', cursive;
 //     scroll-snap-align: center;
 // }
 
+body {
+    scroll-behavior: smooth;
+}
+
 .coverImage {
     height:100%;
   background-size: cover;
@@ -66,6 +71,11 @@ $button-family: 'Playfair Display', cursive;
   background-repeat: no-repeat;
 }
 
+@media screen and (min-width: $desktop) {
+    .nuxt-link-exact-active {
+        box-shadow: inset 0 5px $yellow;
+    }
+}
 .shadow-light {
     box-shadow: 0 0.5em 1em -0.125em rgba($scheme-invert, 0.1),
     0 0px 0 1px rgba($scheme-invert, 0.02);
@@ -74,6 +84,10 @@ $button-family: 'Playfair Display', cursive;
 .shadow-semibold {
     box-shadow: 0 0.5em 1em -0.125em rgba($scheme-invert, 0.4),
     0 0px 0 1px rgba($scheme-invert, 0.1);
+}
+
+.is-underline {
+    text-decoration: underline;
 }
 
 .button:focus {

@@ -1,9 +1,9 @@
 <template>
   <div class="content" v-if="!loading">
-    <header
-      class="hero is-fullheight-with-navbar coverImage"
-      :style="{ backgroundImage: `url(${home.header.image.url}` }"
-    >
+    <header class="hero is-fullheight">
+      <Parallaxy :speed-factor="0.3" class="header-background">
+        <img :src="home.header.image.url" alt="" />
+      </Parallaxy>
       <div class="hero-body">
         <div class="container">
           <div class="columns">
@@ -80,62 +80,6 @@
         </div>
       </div>
     </section>
-    <section class="hero is-primary is-bold is-medium">
-      <div class="hero-body">
-        <div class="container is-fluid">
-          <div class="columns is-centered">
-            <div class="column is-6">
-              <div class="field is-horizontal">
-                <div class="field-body">
-                  <div class="field">
-                    <p class="control is-expanded has-icons-left">
-                      <input class="input" type="text" placeholder="Nom" />
-                      <span class="icon is-small is-left">
-                        <font-awesome-icon :icon="['fas', 'user']" />
-                      </span>
-                    </p>
-                  </div>
-                  <div class="field">
-                    <p
-                      class="control is-expanded has-icons-left has-icons-right"
-                    >
-                      <input class="input" type="email" placeholder="Email" />
-                      <span class="icon is-small is-left">
-                        <font-awesome-icon :icon="['fas', 'envelope']" />
-                      </span>
-                      <span class="icon is-small is-right">
-                        <font-awesome-icon :icon="['fas', 'check']" />
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="field is-horizontal">
-                <div class="field-body">
-                  <div class="field">
-                    <div class="control">
-                      <textarea
-                        class="textarea"
-                        placeholder="Votre Message"
-                      ></textarea>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="field is-horizontal">
-                <div class="field-body">
-                  <div class="field is-grouped is-grouped-centered">
-                    <div class="control">
-                      <button class="button is-warning">Envoyer message</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 
@@ -198,14 +142,20 @@ export default {
 <style lang="scss" scoped>
 @import "~/assets/main.scss";
 
+header {
+  position: relative;
+
+  .header-background {
+    position: absolute;
+  }
+}
+
 #short-bio {
   -webkit-box-shadow: inset 20px 20px 30px 0px rgba(0, 0, 0, 0.12);
   -moz-box-shadow: inset 20px 20px 30px 0px rgba(0, 0, 0, 0.12);
   box-shadow: inset 20px 20px 30px 0px rgba(0, 0, 0, 0.12);
 }
-.navbar {
-  position: absolute !important;
-}
+
 .title {
   font-family: "Expletus Sans";
 }

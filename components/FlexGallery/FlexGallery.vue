@@ -34,7 +34,7 @@
           <div class="item-text mb-6">
             <div class="mb-4" v-if="galleryItem.background != null">
               <button class="button" @click="playBackground(index)">
-                <span class="icon">
+                <span class="icon has-text-warning-light">
                   <font-awesome-icon
                     v-if="readingIndex == index"
                     :icon="['fas', 'pause']"
@@ -49,7 +49,7 @@
                   path: '/musique-de-chambre',
                   hash: '#' + galleryItem.page.url,
                 }"
-                class="has-text-centered is-size-4"
+                class="has-text-centered has-text-warning-light is-size-4 is-underline"
                 >{{ galleryItem.page.title }}</nuxt-link
               >
             </div>

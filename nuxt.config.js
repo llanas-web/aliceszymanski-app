@@ -44,6 +44,7 @@ export default {
     ** https://nuxtjs.org/guide/plugins
     */
     plugins: [
+        "~/plugins/vue-parallaxy",
         "~/plugins/vue-simple-markdown",
         "~/plugins/vue-awesome-swiper"
     ],
