@@ -1,9 +1,9 @@
 <template>
   <div class="content" v-if="!loading">
-    <header class="hero is-fullheight">
-      <Parallaxy :speed-factor="0.3" class="header-background">
-        <img :src="home.header.image.url" alt="" />
-      </Parallaxy>
+    <header
+      class="hero is-fullheight"
+      :style="{ backgroundImage: `url(${home.header.image.url})` }"
+    >
       <div class="hero-body">
         <div class="container">
           <div class="columns">
