@@ -37,7 +37,7 @@ export default {
     */
     css: [
         "bulma",
-        { src: '~/assets/main.scss', lang: 'scss' }
+        { src: '~/assets/main.scss', lang: 'scss' },
     ],
     /*
     ** Plugins to load before mounting the App
@@ -46,7 +46,7 @@ export default {
     plugins: [
         "~/plugins/vue-parallaxy",
         "~/plugins/vue-simple-markdown",
-        "~/plugins/vue-awesome-swiper"
+        { src: '@/plugins/nuxt-swiper-plugin.js', mode: 'client' },
     ],
     /*
     ** Auto import components
