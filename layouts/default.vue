@@ -37,7 +37,11 @@
               class="navbar-item has-text-centered is-uppercase"
               >Musique de chambre</nuxt-link
             >
-            <a class="navbar-item has-text-centered is-uppercase">Contact</a>
+            <nuxt-link
+              to="/#medias"
+              class="navbar-item has-text-centered is-uppercase"
+              >Médias</nuxt-link
+            >
           </div>
         </div>
       </div>
@@ -71,7 +75,9 @@
           </p>
           <p class="footer-thanks">
             Website handcrafted by
-            <a href="https://github.com/llanas">Boris MAURENCE @llanas</a>
+            <a href="https://github.com/llanas" target="_blank"
+              >Boris MAURENCE @llanas</a
+            >
           </p>
         </div>
       </div>
@@ -125,7 +131,7 @@ export default {
 
 footer {
   box-shadow: 0 0.5em 4em -0.125em rgba($scheme-invert, 0.4),
-    0 0px 0 1px rgba($scheme-invert, 0.1);
+      0 0px 0 1px rgba($scheme-invert, 0.1);
 
   .footer-thanks {
     font-size: 0.7em;

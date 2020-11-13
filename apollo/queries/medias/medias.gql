@@ -1,0 +1,24 @@
+# Write your query or mutation here
+query {
+  medias {
+    id
+    title
+    description
+    media {
+      id
+      mime
+      url
+    }
+    soundcloudUrl
+    background {
+        id
+        url
+    }
+    youtubeId
+    page {
+      id
+      title
+      url
+    }
+  }
+}
