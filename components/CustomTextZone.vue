@@ -8,19 +8,16 @@
       ]"
     >
       <div class="container">
-        <div>
-          <div v-if="strapiTextZone.title">
-            <p
-              class="is-size-2 is-family-secondary is-uppercase"
-              :class="{
-                'has-text-centered': strapiTextZone.isJustified,
-                'has-text-centered': strapiTextZone.isCentered,
-              }"
-            >
-              {{ strapiTextZone.title }}
-            </p>
-          </div>
-        </div>
+        <p
+          v-if="strapiTextZone.title"
+          class="is-size-2 is-family-secondary is-uppercase"
+          :class="{
+            'has-text-centered': strapiTextZone.isJustified,
+            'has-text-centered': strapiTextZone.isCentered,
+          }"
+        >
+          {{ strapiTextZone.title }}
+        </p>
         <div>
           <div
             v-if="strapiTextZone.displayAsColumn"
@@ -70,10 +67,9 @@
           >
             <!-- Image -->
             <div v-if="media.mime.indexOf('image') != -1">
-              <div
-                class="image is-4by3 coverImage shadow-semibold"
-                :style="{ backgroundImage: 'url(' + media.url + ')' }"
-              ></div>
+              <figure class="image is-16by9">
+                <img :src="media.url" />
+              </figure>
             </div>
             <!-- PDF -->
             <div

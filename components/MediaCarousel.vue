@@ -18,7 +18,11 @@
             "
           >
             <video class="is-fullheight">
-              <source :src="media.media.url" :type="media.media.mime" />
+              <source
+                :src="media.media.url"
+                :type="media.media.mime"
+                size:1080
+              />
             </video>
           </vue-plyr>
           <vue-plyr v-else-if="media.youtubeId != null">
