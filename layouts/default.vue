@@ -42,6 +42,11 @@
               class="navbar-item has-text-centered is-uppercase"
               >Médias</nuxt-link
             >
+            <nuxt-link
+              to="/gallery"
+              class="navbar-item has-text-centered is-uppercase"
+              >Gallery</nuxt-link
+            >
           </div>
         </div>
       </div>
@@ -131,7 +136,7 @@ export default {
 
 footer {
   box-shadow: 0 0.5em 4em -0.125em rgba($scheme-invert, 0.4),
-      0 0px 0 1px rgba($scheme-invert, 0.1);
+    0 0px 0 1px rgba($scheme-invert, 0.1);
 
   .footer-thanks {
     font-size: 0.7em;
