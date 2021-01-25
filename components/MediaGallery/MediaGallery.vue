@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="sections-grid">
+    <div class="sections-grid" v-if="medias">
       <div
         v-for="(photo, index) in medias"
         :key="photo.id"
@@ -8,11 +8,16 @@
         @click="selectPhoto(index)"
         @mouseenter="hoveredPhoto = photo.id"
         @mouseleave="hoveredPhoto = null"
+        :class="{
+          'section-tall': photo.ratio === 'tall',
+          'section-wide': photo.ratio === 'wide',
+          'section-big': photo.ratio === 'big',
+        }"
       >
         <div
           class="section-card-background"
           :style="{
-            backgroundImage: 'url(' + getPhotoImageUrl(photo) + ')',
+            backgroundImage: 'url(' + getPhotoImageUrl(photo.media) + ')',
           }"
         ></div>
       </div>
@@ -28,15 +33,15 @@
           >
             <swiper-slide v-for="photo in medias" :key="photo.id" class="slide">
               <img
-                :src="photo.url"
-                :alt="photo.alternativeText"
-                :title="photo.name"
+                :src="getPhotoImageUrl(photo.media)"
+                :alt="photo.description"
+                :title="photo.title"
                 class="swiper-lazy"
               />
               <h2 class="is-size-4 has-text-weight-semibold">
-                {{ photo.name }}
+                {{ photo.title }}
               </h2>
-              <h3>{{ photo.alternativeText }}</h3>
+              <h3>{{ photo.description }}</h3>
             </swiper-slide>
             <div class="swiper-button-prev" slot="button-prev"></div>
             <div class="swiper-button-next" slot="button-next"></div>
@@ -77,8 +82,11 @@ export default {
     };
   },
   methods: {
-    getPhotoImageUrl({ formats }) {
-      return formats["medium"] ? formats["medium"].url : formats["large"];
+    getPhotoImageUrl(media) {
+      const formats = media.formats;
+      if (formats["medium"]) return formats["medium"].url;
+      else if (formats["large"]) return formats["large"].url;
+      else return media.url;
     },
     selectPhoto(photoIndex) {
       this.selectedPhotoIndex = photoIndex;

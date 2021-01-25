@@ -1,7 +1,7 @@
 <template>
   <div class="content is-widescreen mt-6">
     <div class="hero is-fullheight">
-      <media-gallery :medias="images"></media-gallery>
+      <media-gallery :medias="photos"></media-gallery>
     </div>
   </div>
 </template>
@@ -13,16 +13,14 @@ export default {
   components: { MediaGallery },
   data() {
     return {
-      images: [],
+      photos: [],
     };
   },
   methods: {},
   async fetch() {
-    let url = `${process.env.API_URL || "http://localhost:1337"}/gallery`;
-    let gallery = await fetch(url).then((response) => response.json());
-    if (gallery != null) {
-      this.images = gallery.images;
-    }
+    let gallery = await this.$axios.$get("/gallery");
+    this.photos = gallery.photos;
+    console.log(this);
   },
 };
 </script>

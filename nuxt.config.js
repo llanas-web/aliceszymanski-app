@@ -72,8 +72,14 @@ export default {
     modules: [
         // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
         '@nuxtjs/bulma',
-        "@nuxtjs/apollo"
+        "@nuxtjs/apollo",
+        '@nuxtjs/axios',
     ],
+    axios: {
+        // extra config e.g
+        baseURL: process.env.API_URL || 'http://localhost:1337',
+        debug: process.env.NODE_ENV != 'production'
+    },
     apollo: {
         clientConfigs: {
             default: {
