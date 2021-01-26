@@ -124,6 +124,10 @@ export default {
   flex-direction: row;
 }
 
+.markdown-body {
+  font-family: $family-sans-serif;
+}
+
 .members-gallery-item {
   flex-grow: 1;
 
