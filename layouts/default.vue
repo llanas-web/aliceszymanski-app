@@ -1,6 +1,13 @@
 <template>
   <div class="app">
-    <nav class="navbar shadow-light" role="navigation">
+    <nav
+      class="navbar"
+      :class="{
+        'navbar-transparent': !scrollOverheader && isHomePage,
+        'shadow-light': scrollOverheader && !isHomePage,
+      }"
+      role="navigation"
+    >
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item is-hidden-desktop">
@@ -97,13 +104,31 @@ export default {
   data() {
     return {
       isBurgerToggled: false,
+      scrollOverheader: false,
+      navbarHeight: 0,
     };
+  },
+  computed: {
+    isHomePage() {
+      return this.$nuxt.$route.path == "/";
+    },
   },
   apollo: {
     footer: {
       prefetch: true,
       query: footerQuery,
     },
+  },
+  methods: {
+    updateScroll() {
+      this.scrollOverheader = window.scrollY + 80 > window.screen.height;
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.updateScroll);
+  },
+  destroy() {
+    window.removeEventListener("scroll");
   },
 };
 </script>
@@ -123,15 +148,29 @@ export default {
   font-family: $family-secondary;
 }
 
+.navbar-transparent {
+  background-color: #0000;
+
+  .navbar-item {
+    color: #f9f9f9;
+  }
+  .navbar-item:hover,
+  .navbar-item:focus,
+  .navbar-item:focus-within,
+  .navbar-item:focus-visible {
+    background-color: #0000;
+  }
+}
+
 .navbar-start {
   flex-grow: 1;
   justify-content: center;
   text-align: center;
+  gap: 3rem;
 }
 
 .navbar-item {
-  min-width: 180px;
-  justify-content: center;
+  justify-content: left;
 }
 
 footer {
