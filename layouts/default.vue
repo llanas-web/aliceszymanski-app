@@ -52,7 +52,7 @@
             <nuxt-link
               to="/gallery"
               class="navbar-item has-text-centered is-uppercase"
-              >Gallery</nuxt-link
+              >Gallerie</nuxt-link
             >
           </div>
         </div>
