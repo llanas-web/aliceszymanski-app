@@ -146,6 +146,11 @@ export default {
   height: $navbar-height;
   width: 100%;
   font-family: $family-secondary;
+  //   transition: 1s;
+}
+
+.navbar-item {
+  //   transition: 500ms;
 }
 
 .navbar-transparent {
@@ -153,12 +158,6 @@ export default {
 
   .navbar-item {
     color: #f9f9f9;
-  }
-  .navbar-item:hover,
-  .navbar-item:focus,
-  .navbar-item:focus-within,
-  .navbar-item:focus-visible {
-    background-color: #0000;
   }
 }
 
