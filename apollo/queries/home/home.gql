@@ -45,7 +45,13 @@ query {
             }
           }
         }
-        background {
+        backgroundMedia {
+          id
+          url
+          mime
+          formats 
+        }      
+        backgroundImage {
           id
           url
           mime

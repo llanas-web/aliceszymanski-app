@@ -11,28 +11,31 @@
         class="gallery-item has-text-centered coverImage"
         :style="{
           backgroundImage:
-            galleryItem.background == null ||
-            galleryItem.background.mime.indexOf('audio') != -1 ||
+            galleryItem.backgroundMedia == null ||
+            galleryItem.backgroundMedia.mime.indexOf('audio') != -1 ||
             index != readingIndex
-              ? `url(${galleryItem.page.header.image.url})`
+              ? `url(${galleryItem.backgroundImage.formats['large'].url})`
               : '',
         }"
       >
-        <div class="item-container is-fullheight">
+        <div
+          class="item-container is-fullheight"
+          v-if="galleryItem.backgroundMedia != null"
+        >
           <video
-            v-if="galleryItem.background.mime.indexOf('video') != -1"
+            v-if="galleryItem.backgroundMedia.mime.indexOf('video') != -1"
             :ref="'mediaSource' + index"
             class="video-content"
           >
-            <source :src="galleryItem.background.url" />
+            <source :src="galleryItem.backgroundMedia.url" />
           </video>
           <audio
             :ref="'mediaSource' + index"
-            v-else-if="galleryItem.background.mime.indexOf('audio') != -1"
-            :src="galleryItem.background.url"
+            v-else-if="galleryItem.backgroundMedia.mime.indexOf('audio') != -1"
+            :src="galleryItem.backgroundMedia.url"
           ></audio>
           <div class="item-text mb-6">
-            <div class="mb-4" v-if="galleryItem.background != null">
+            <div class="mb-4" v-if="galleryItem.backgroundMedia != null">
               <button class="button" @click="playBackground(index)">
                 <span class="icon has-text-warning-light">
                   <font-awesome-icon
