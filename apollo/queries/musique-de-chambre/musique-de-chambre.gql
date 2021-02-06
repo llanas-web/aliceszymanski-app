@@ -41,7 +41,16 @@ query {
                     formats
                 }
             }
-            soundcloudLink
+          	musicItems {
+              id
+              title
+              music {
+                id
+                alternativeText
+                mime
+                url
+              }
+            }
         }
     }
 }

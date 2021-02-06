@@ -53,7 +53,7 @@
           </div>
         </div>
         <div
-          v-if="strapiTextZone.medias"
+          v-if="strapiTextZone.medias && strapiTextZone.medias.length > 1"
           class="columns is-centered is-vcentered mt-4"
         >
           <div
@@ -82,6 +82,21 @@
                 class="button link-button is-yellow is-outlined is-medium"
                 >{{ media.name }}</a
               >
+            </div>
+          </div>
+        </div>
+        <div
+          v-else-if="
+            strapiTextZone.medias && strapiTextZone.medias.length === 1
+          "
+          class="columns is-centered is-vcentered mt-4"
+        >
+          <div class="column is-8">
+            <!-- Image -->
+            <div v-if="strapiTextZone.medias[0].mime.indexOf('image') != -1">
+              <figure class="image is-16by9">
+                <img :src="strapiTextZone.medias[0].url" />
+              </figure>
             </div>
           </div>
         </div>

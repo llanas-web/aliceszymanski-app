@@ -11,7 +11,7 @@
     <div class="container p-6">
       <div v-for="(page, index) in musiqueDeChambre.pages" :key="page.id">
         <section class="section" :id="page.url">
-          <section class="my-6 columns is-6 is-centered">
+          <section class="py-6 columns is-6 is-centered">
             <div class="column is-6">
               <p class="is-size-2 is-family-secondary is-uppercase">
                 {{ page.title }}
@@ -28,6 +28,36 @@
                 }"
               ></div>
             </div>
+          </section>
+          <section v-if="page.musicItems" class="music-list my-6">
+            <div
+              v-for="musicItem in page.musicItems"
+              :key="musicItem.id"
+              class="music-item has-text-centered"
+            >
+              <audio
+                v-if="musicItem.music != null"
+                :ref="'musicSource-' + musicItem.id"
+                :src="musicItem.music.url"
+              />
+              <span class="icon" @click="playMusic(musicItem.id)">
+                <font-awesome-icon
+                  v-if="musicReadingId == musicItem.id"
+                  :icon="['fas', 'pause']"
+                />
+                <font-awesome-icon v-else :icon="['fas', 'play']" />
+              </span>
+              <span>
+                {{ musicItem.title }}
+              </span>
+            </div>
+          </section>
+          <section v-for="content in page.content" :key="content.id">
+            <CustomTextZone
+              :strapi-text-zone="content"
+              padding-y="6"
+              padding-x="6"
+            ></CustomTextZone>
           </section>
           <section
             v-if="page.members != null && page.members.length > 0"
@@ -96,12 +126,35 @@ export default {
   data() {
     return {
       musiqueDeChambre: {},
+      musicReadingId: null,
     };
   },
   apollo: {
     musiqueDeChambre: {
       prefetch: true,
       query: musiqueDeChambreQuery,
+    },
+  },
+  methods: {
+    playMusic(musicItemId) {
+      const listMusics = [];
+      this.musiqueDeChambre.pages.forEach((page) => {
+        listMusics.push(...page.musicItems);
+      });
+      for (const musicItem of listMusics) {
+        const refId = "musicSource-" + musicItem.id;
+        if (musicItem.id === musicItemId) {
+          if (this.musicReadingId === musicItem.id) {
+            this.$refs[refId][0].pause();
+            this.musicReadingId = null;
+          } else {
+            this.$refs[refId][0].play();
+            this.musicReadingId = musicItem.id;
+          }
+        } else {
+          this.$refs[refId][0].stop();
+        }
+      }
     },
   },
 };
@@ -117,6 +170,21 @@ export default {
 
 .page-header-image {
   height: 100%;
+}
+
+.music-list {
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-item {
+  min-width: 300px;
+
+  .icon {
+    vertical-align: bottom;
+  }
 }
 
 .members-gallery {

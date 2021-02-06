@@ -77,8 +77,6 @@ export default {
   methods: {
     playBackground(sourceIndex) {
       for (let i = 0; i < this.galleryListItems.length; i++) {
-        console.dir(sourceIndex);
-        console.dir(this.$refs);
         if (sourceIndex === i) {
           if (sourceIndex === this.readingIndex) {
             this.$refs["mediaSource" + i][0].pause();
