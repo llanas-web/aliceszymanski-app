@@ -4,7 +4,7 @@
       <!-- swiper1 -->
       <swiper
         class="swiper gallery-top"
-        v-swiper="swiperOptionTop"
+        :options="swiperOptionTop"
         ref="swiperTop"
       >
         <swiper-slide
@@ -25,12 +25,14 @@
               />
             </video>
           </vue-plyr>
-          <vue-plyr v-else-if="media.youtubeId != null">
-            <div
-              data-plyr-provider="youtube"
-              :data-plyr-embed-id="media.youtubeId"
-            ></div>
-          </vue-plyr>
+          <div v-else-if="media.youtubeId != null" class="youtube-content">
+            <youtube
+              :video-id="media.youtubeId"
+              :resize="true"
+              :fitParent="true"
+            >
+            </youtube>
+          </div>
           <iframe
             v-else-if="media.soundcloudUrl != null"
             width="100%"
@@ -73,7 +75,9 @@ export default {
   props: ["listMedias"],
   data() {
     return {
-      swiperOptionTop: {},
+      swiperOptionTop: {
+        allowTouchMove: false,
+      },
       swiperOptionThumbs: {
         spaceBetween: 10,
         centeredSlides: true,
@@ -84,8 +88,9 @@ export default {
     };
   },
   methods: {
-    onThumbnailChange(val) {
-      this.$refs.swiperTop.$swiper.slideTo(val.activeIndex);
+    onThumbnailChange() {
+      const newIndex = this.$refs.swiperThumbs.$swiper.activeIndex;
+      this.$refs.swiperTop.$swiper.slideTo(newIndex);
     },
     getBackgroundImageFromMedia(media) {
       if (media.youtubeId != null) {
@@ -103,6 +108,14 @@ export default {
 
 .media-carousel {
   height: 80vh;
+}
+
+.youtube-content {
+  display: flex;
+  height: 100%;
+  > * {
+    margin: auto;
+  }
 }
 
 .swiper {

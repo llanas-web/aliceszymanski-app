@@ -47,7 +47,8 @@ export default {
         "~/plugins/vue-parallaxy",
         "~/plugins/vue-simple-markdown",
         { src: '@/plugins/nuxt-awesome-swiper.js', mode: 'client' },
-        { src: '~/plugins/vue-plyr', mode: 'client' }
+        { src: '~/plugins/vue-plyr', mode: 'client' },
+        { src: '~/plugins/vue-youtube', mode: 'client' }
     ],
     /*
     ** Auto import components

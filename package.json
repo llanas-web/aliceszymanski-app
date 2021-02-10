@@ -28,7 +28,8 @@
         "vue-awesome-swiper": "^4.1.1",
         "vue-parallaxy": "^1.1.1",
         "vue-plyr": "^7.0.0",
-        "vue-simple-markdown": "^1.1.4"
+        "vue-simple-markdown": "^1.1.4",
+        "vue-youtube": "^1.4.0"
     },
     "devDependencies": {}
 }
