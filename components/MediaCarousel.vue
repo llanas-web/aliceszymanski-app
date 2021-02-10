@@ -113,9 +113,8 @@ export default {
 .youtube-content {
   display: flex;
   height: 100%;
-  > * {
-    margin: auto;
-  }
+  justify-content: center;
+  align-items: center;
 }
 
 .swiper {
