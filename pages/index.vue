@@ -57,7 +57,7 @@
                 <CustomEventCard v-if="eventHover" :strapi-event="eventHover" />
               </transition>
             </div>
-            <div class="column is-5">
+            <div class="column is-4">
               <div class="timeline is-ltr">
                 <header class="timeline-header">
                   <!-- <span class="tag is-medium is-primary">...</span> -->

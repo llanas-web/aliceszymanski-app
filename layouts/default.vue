@@ -55,6 +55,22 @@
               >Gallerie</nuxt-link
             >
           </div>
+          <div class="navbar-end">
+            <div
+              class="navbar-item"
+              v-for="socialmediaLink of footer.socialmediaLink"
+              :key="socialmediaLink.id"
+            >
+              <a :href="socialmediaLink.link" target="_blank" class="mx-2">
+                <span class="icon is-medium has-text-warning">
+                  <font-awesome-icon
+                    :icon="['fab', socialmediaLink.icon.faName]"
+                    class="is-size-4"
+                  />
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
