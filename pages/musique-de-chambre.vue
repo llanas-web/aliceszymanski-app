@@ -142,17 +142,18 @@ export default {
         listMusics.push(...page.musicItems);
       });
       for (const musicItem of listMusics) {
-        const refId = "musicSource-" + musicItem.id;
+        const audio = this.$refs["musicSource-" + musicItem.id][0];
         if (musicItem.id === musicItemId) {
           if (this.musicReadingId === musicItem.id) {
-            this.$refs[refId][0].pause();
+            audio.pause();
             this.musicReadingId = null;
           } else {
-            this.$refs[refId][0].play();
+            audio.play();
             this.musicReadingId = musicItem.id;
           }
         } else {
-          this.$refs[refId][0].stop();
+          audio.stop();
+          audio.currentTime = 0;
         }
       }
     },
