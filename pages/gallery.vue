@@ -20,7 +20,6 @@ export default {
   async fetch() {
     let gallery = await this.$axios.$get("/gallery");
     this.photos = gallery.photos;
-    console.log(this);
   },
 };
 </script>
