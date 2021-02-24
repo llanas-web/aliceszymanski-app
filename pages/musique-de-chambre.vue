@@ -152,7 +152,7 @@ export default {
             this.musicReadingId = musicItem.id;
           }
         } else {
-          audio.stop();
+          audio.pause();
           audio.currentTime = 0;
         }
       }
