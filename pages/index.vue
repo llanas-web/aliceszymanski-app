@@ -41,7 +41,7 @@
         <div class="has-text-centered">
           <p class="is-size-2 is-family-secondary is-uppercase">Médias</p>
         </div>
-        <MediaCarousel :list-medias="medias"></MediaCarousel>
+        <MediaCarousel></MediaCarousel>
       </div>
     </section>
     <section class="hero is-medium">
@@ -153,10 +153,6 @@ export default {
             }))
         );
       },
-    },
-    medias: {
-      prefetch: true,
-      query: mediasQuery,
     },
   },
 };

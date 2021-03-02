@@ -72,9 +72,9 @@
 
 <script>
 export default {
-  props: ["listMedias"],
   data() {
     return {
+      listMedias: [],
       swiperOptionTop: {
         allowTouchMove: false,
       },
@@ -86,6 +86,10 @@ export default {
         slideToClickedSlide: true,
       },
     };
+  },
+  async fetch() {
+    let { medias } = await this.$axios.$get("/media-gallery");
+    this.listMedias = medias;
   },
   methods: {
     onThumbnailChange() {

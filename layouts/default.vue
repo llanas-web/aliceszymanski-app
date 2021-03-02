@@ -52,7 +52,7 @@
             <nuxt-link
               to="/gallery"
               class="navbar-item has-text-centered is-uppercase"
-              >Gallerie</nuxt-link
+              >Galerie</nuxt-link
             >
           </div>
           <div class="navbar-end">
@@ -62,7 +62,7 @@
               :key="socialmediaLink.id"
             >
               <a :href="socialmediaLink.link" target="_blank" class="mx-2">
-                <span class="icon is-medium has-text-warning">
+                <span class="icon is-medium">
                   <font-awesome-icon
                     :icon="['fab', socialmediaLink.icon.faName]"
                     class="is-size-4"
@@ -163,10 +163,6 @@ export default {
   width: 100%;
   font-family: $family-secondary;
   //   transition: 1s;
-}
-
-.navbar-item {
-  //   transition: 500ms;
 }
 
 .navbar-transparent {
