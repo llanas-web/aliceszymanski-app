@@ -8,14 +8,13 @@
       }"
       role="navigation"
     >
-      <div class="container">
+      <div class="container is-fluid">
         <div class="navbar-brand">
-          <a class="navbar-item is-hidden-desktop">
-            <p>
-              Alice
-              <i>SZYMANSKI</i>
-            </p>
-          </a>
+          <transition name="fade">
+            <a class="navbar-item" v-show="scrollOverheader || !isHomePage"
+              ><span>Alice Szymanski</span></a
+            >
+          </transition>
           <a
             role="button"
             class="navbar-burger burger"
@@ -137,7 +136,7 @@ export default {
   },
   methods: {
     updateScroll() {
-      this.scrollOverheader = window.scrollY + 80 > window.screen.height;
+      this.scrollOverheader = window.scrollY + 200 > window.screen.height;
     },
   },
   mounted() {
@@ -163,6 +162,25 @@ export default {
   width: 100%;
   font-family: $family-secondary;
   //   transition: 1s;
+}
+
+.navbar-brand {
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
+  .title-alice {
+    color: #e6c555 !important;
+  }
+  .title-szymanski {
+    color: #d0d0ad !important;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 
 .navbar-transparent {
