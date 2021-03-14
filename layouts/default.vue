@@ -8,14 +8,13 @@
       }"
       role="navigation"
     >
-      <div class="container">
+      <div class="container is-fluid">
         <div class="navbar-brand">
-          <a class="navbar-item is-hidden-desktop">
-            <p>
-              Alice
-              <i>SZYMANSKI</i>
-            </p>
-          </a>
+          <transition name="fade">
+            <a class="navbar-item" v-show="scrollOverheader || !isHomePage"
+              ><span>Alice Szymanski</span></a
+            >
+          </transition>
           <a
             role="button"
             class="navbar-burger burger"
@@ -52,7 +51,7 @@
             <nuxt-link
               to="/gallery"
               class="navbar-item has-text-centered is-uppercase"
-              >Gallerie</nuxt-link
+              >Galerie</nuxt-link
             >
           </div>
           <div class="navbar-end">
@@ -62,7 +61,7 @@
               :key="socialmediaLink.id"
             >
               <a :href="socialmediaLink.link" target="_blank" class="mx-2">
-                <span class="icon is-medium has-text-warning">
+                <span class="icon is-medium">
                   <font-awesome-icon
                     :icon="['fab', socialmediaLink.icon.faName]"
                     class="is-size-4"
@@ -137,7 +136,7 @@ export default {
   },
   methods: {
     updateScroll() {
-      this.scrollOverheader = window.scrollY + 80 > window.screen.height;
+      this.scrollOverheader = window.scrollY + 200 > window.screen.height;
     },
   },
   mounted() {
@@ -165,8 +164,23 @@ export default {
   //   transition: 1s;
 }
 
-.navbar-item {
-  //   transition: 500ms;
+.navbar-brand {
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
+  .title-alice {
+    color: #e6c555 !important;
+  }
+  .title-szymanski {
+    color: #d0d0ad !important;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 
 .navbar-transparent {

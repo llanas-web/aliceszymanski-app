@@ -119,7 +119,6 @@
 </template>
 
 <script>
-import musiqueDeChambreQuery from "~/apollo/queries/musique-de-chambre/musique-de-chambre";
 import "vue-simple-markdown/dist/vue-simple-markdown.css";
 
 export default {
@@ -129,11 +128,8 @@ export default {
       musicReadingId: null,
     };
   },
-  apollo: {
-    musiqueDeChambre: {
-      prefetch: true,
-      query: musiqueDeChambreQuery,
-    },
+  async fetch() {
+    this.musiqueDeChambre = await this.$axios.$get("/musique-de-chambre");
   },
   methods: {
     playMusic(musicItemId) {
@@ -152,7 +148,7 @@ export default {
             this.musicReadingId = musicItem.id;
           }
         } else {
-          audio.stop();
+          audio.pause();
           audio.currentTime = 0;
         }
       }
