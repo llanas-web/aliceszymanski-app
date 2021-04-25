@@ -137,7 +137,7 @@ export default {
     padding: 1rem 0;
   }
   &.gallery-thumbs .swiper-slide {
-    width: 15%;
+    width: 10%;
     height: 100%;
     opacity: 0.4;
   }
