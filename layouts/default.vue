@@ -11,8 +11,11 @@
       <div class="container is-fluid">
         <div class="navbar-brand">
           <transition name="fade">
-            <a class="navbar-item" v-show="scrollOverheader || !isHomePage"
-              ><span>Alice Szymanski</span></a
+            <nuxt-link
+              to="/"
+              class="navbar-item brand-title"
+              v-show="scrollOverheader || !isHomePage"
+              ><span>Alice Szymanski</span></nuxt-link
             >
           </transition>
           <a
@@ -162,6 +165,10 @@ export default {
   width: 100%;
   font-family: $family-secondary;
   //   transition: 1s;
+}
+
+.brand-title {
+  box-shadow: none !important;
 }
 
 .navbar-brand {
