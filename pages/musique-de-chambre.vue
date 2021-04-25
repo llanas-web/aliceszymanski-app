@@ -122,6 +122,30 @@
 import "vue-simple-markdown/dist/vue-simple-markdown.css";
 
 export default {
+  head() {
+    if (this.musiqueDeChambre && this.musiqueDeChambre.metadata) {
+      return {
+        title: "Alice Szymanski - Musique de Chambre",
+        meta: [
+          {
+            hid: "title",
+            name: "title",
+            content: this.musiqueDeChambre.metadata.title,
+          },
+          {
+            hid: "description",
+            name: "description",
+            content: this.musiqueDeChambre.metadata.description,
+          },
+          {
+            hid: "keywords",
+            name: "keywords",
+            content: this.musiqueDeChambre.metadata.keywords,
+          },
+        ],
+      };
+    }
+  },
   data() {
     return {
       musiqueDeChambre: {},

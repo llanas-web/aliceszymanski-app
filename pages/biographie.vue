@@ -37,6 +37,30 @@ import bioQuery from "~/apollo/queries/bio/bio";
 import "vue-simple-markdown/dist/vue-simple-markdown.css";
 
 export default {
+  head() {
+    if (this.bio && this.bio.metadata) {
+      return {
+        title: "Alice Szymanski - Biographie",
+        meta: [
+          {
+            hid: "title",
+            name: "title",
+            content: this.bio.metadata.title,
+          },
+          {
+            hid: "description",
+            name: "description",
+            content: this.bio.metadata.description,
+          },
+          {
+            hid: "keywords",
+            name: "keywords",
+            content: this.bio.metadata.keywords,
+          },
+        ],
+      };
+    }
+  },
   data() {
     return {
       bio: {},

@@ -1,6 +1,12 @@
+# Write your query or mutation here
 query {
   bio {
     id
+    metadata {
+        title
+      description
+      keywords
+    }
     photo {
       id
       url
@@ -27,6 +33,7 @@ query {
       id
       title
       displayAsColumn
+      
       listContents {
         id
         title

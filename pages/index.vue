@@ -100,14 +100,42 @@
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import homeQuery from "~/apollo/queries/home/home";
 import eventsQuery from "~/apollo/queries/evenement/evenements";
-import mediasQuery from "~/apollo/queries/medias/medias";
-import { closestIndexTo, compareAsc, format } from "date-fns";
+import { closestIndexTo, format } from "date-fns";
 import { fr } from "date-fns/locale";
 
 export default {
   components: {
     Swiper,
     SwiperSlide,
+  },
+  async fetch() {
+    let home = await this.$axios.$get("/home");
+    this.metadata = home.metadata;
+    console.log("test METADATA" + this.metadata);
+  },
+  head() {
+    if (this.metadata) {
+      return {
+        title: "Alice Szymanski - Accueil",
+        meta: [
+          {
+            hid: "title",
+            name: "title",
+            content: this.metadata.title,
+          },
+          {
+            hid: "description",
+            name: "description",
+            content: this.metadata.description,
+          },
+          {
+            hid: "keywords",
+            name: "keywords",
+            content: this.metadata.keywords,
+          },
+        ],
+      };
+    }
   },
   data() {
     return {
