@@ -94,7 +94,7 @@
           <div class="column is-8">
             <!-- Image -->
             <div v-if="strapiTextZone.medias[0].mime.indexOf('image') != -1">
-              <figure class="image is-16by9">
+              <figure class="image">
                 <img :src="strapiTextZone.medias[0].url" />
               </figure>
             </div>
