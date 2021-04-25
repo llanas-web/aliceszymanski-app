@@ -46,6 +46,11 @@
     </section>
     <section class="hero is-medium">
       <div class="hero-body">
+        <div class="has-text-centered mb-2">
+          <p class="is-size-2 is-family-secondary is-uppercase">
+            Liste évènements
+          </p>
+        </div>
         <div class="container is-fluid">
           <div class="columns is-centered">
             <div class="column is-4">

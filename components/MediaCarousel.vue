@@ -123,7 +123,7 @@ export default {
 
 .swiper {
   .swiper-slide {
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -140,6 +140,7 @@ export default {
     width: 10%;
     height: 100%;
     opacity: 0.4;
+    background-color: black;
   }
   &.gallery-thumbs .swiper-slide-active {
     opacity: 1;
