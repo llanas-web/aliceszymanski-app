@@ -200,6 +200,15 @@ export default {
   justify-content: center;
 }
 
+@media screen and (max-width: 1024px) {
+  .music-list {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .music-item {
   min-width: 300px;
 

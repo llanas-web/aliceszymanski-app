@@ -127,6 +127,9 @@ export default {
 }
 
 @media screen and (max-width: 1024px) {
+  .media-image {
+    display: none;
+  }
   .timeline-column {
     display: none;
   }
