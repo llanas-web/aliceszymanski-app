@@ -8,7 +8,8 @@
         <div class="container">
           <div class="columns">
             <div
-              class="column is-half has-text-right header-text is-hidden-touch"
+              data-aos="fade-up"
+              class="column is-half header-text is-hidden-touch"
             >
               <p>
                 <span class="title-alice">Alice</span><br /><span

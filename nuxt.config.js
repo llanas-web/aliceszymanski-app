@@ -48,7 +48,8 @@ export default {
         "~/plugins/vue-simple-markdown",
         { src: '@/plugins/nuxt-awesome-swiper.js', mode: 'client' },
         { src: '~/plugins/vue-plyr', mode: 'client' },
-        { src: '~/plugins/vue-youtube', mode: 'client' }
+        { src: '~/plugins/vue-youtube', mode: 'client' },
+        "~/plugins/aos.client"
     ],
     /*
     ** Auto import components
