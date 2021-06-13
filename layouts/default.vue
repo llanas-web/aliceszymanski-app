@@ -52,6 +52,11 @@
               >Médias</nuxt-link
             >
             <nuxt-link
+              to="/agenda"
+              class="navbar-item has-text-centered is-uppercase"
+              >Agenda</nuxt-link
+            >
+            <nuxt-link
               to="/gallery"
               class="navbar-item has-text-centered is-uppercase"
               >Galerie</nuxt-link
@@ -143,7 +148,11 @@ export default {
     },
   },
   mounted() {
-    window.addEventListener("scroll", this.updateScroll);
+    if (window.innerWidth > 1024) {
+      window.addEventListener("scroll", this.updateScroll);
+    } else {
+      this.scrollOverheader = true;
+    }
   },
   destroy() {
     window.removeEventListener("scroll");
@@ -189,12 +198,14 @@ export default {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+/* PC */
+@media screen and (min-width: 600px) {
+  .navbar-transparent {
+    background-color: #0000;
 
-.navbar-transparent {
-  background-color: #0000;
-
-  .navbar-item {
-    color: #f9f9f9;
+    .navbar-item {
+      color: #f9f9f9;
+    }
   }
 }
 
@@ -207,6 +218,12 @@ export default {
 
 .navbar-item {
   justify-content: left;
+}
+
+.navbar-end {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 footer {
