@@ -55,7 +55,10 @@
                   path: '/musique-de-chambre',
                   hash: '#' + galleryItem.page.url,
                 }"
-                class="has-text-centered has-text-warning-light is-size-4 is-family-secondary"
+                class="
+                  has-text-centered has-text-warning-light
+                  is-size-4 is-family-secondary
+                "
                 >{{ galleryItem.page.title }}</nuxt-link
               >
             </div>
@@ -139,6 +142,20 @@ export default {
         rgba(0, 0, 0, 0) 100%
       );
     }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .item-text {
+    visibility: visible;
+    opacity: 1;
+    background: rgb(56, 44, 44);
+    background: linear-gradient(
+      0deg,
+      rgba(56, 44, 44, 1) 0%,
+      rgba(113, 113, 113, 0.4878151944371498) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
   }
 }
 

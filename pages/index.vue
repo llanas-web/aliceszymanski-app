@@ -9,6 +9,8 @@
           <div class="columns">
             <div
               data-aos="fade-up"
+              data-aos-delay="50"
+              data-aos-duration="1000"
               class="column is-half header-text is-hidden-touch"
             >
               <p>
@@ -49,7 +51,7 @@
       <div class="hero-body">
         <div class="has-text-centered mb-2">
           <p class="is-size-2 is-family-secondary is-uppercase">
-            Liste évènements
+            Prochains évènements
           </p>
         </div>
         <div class="container is-fluid">
@@ -117,7 +119,6 @@ export default {
   async fetch() {
     let home = await this.$axios.$get("/home");
     this.metadata = home.metadata;
-    console.log("test METADATA" + this.metadata);
   },
   head() {
     if (this.metadata) {
