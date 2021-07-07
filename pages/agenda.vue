@@ -46,7 +46,8 @@
                   <div>
                     <div class="media-content">
                       <p class="title is-4">{{ event.title }}</p>
-                      <p class="subtitle is-6">{{ event.formatedDate }}</p>
+                      <p v-if="event.endFormatedDate && event.endFormatedDate != event.startFormatedDate" class="subtitle is-6">{{ event.startFormatedDate }} - {{ event.endFormatedDate }}</p>
+                      <p v-else class="subtitle is-6">{{ event.startFormatedDate }}</p>
                     </div>
 
                     <vue-simple-markdown
@@ -54,6 +55,9 @@
                     ></vue-simple-markdown>
                   </div>
                 </div>
+                  <div v-if="event.cancelled" class="cancelled-tag">
+                      <span class="tag is-warning">Annulé</span>
+                  </div>
                 <div v-if="events[1].length - 1 != index" class="divider"></div>
               </div>
             </section>
@@ -86,21 +90,30 @@ export default {
   async fetch() {
     let evenementsByYears = new Map();
     let listEvents = await this.$axios.$get("/evenements");
-    listEvents.forEach((event) => {
-      event.formatedDate = format(new Date(event.starting), "d MMMM Y", {
-        locale: fr,
+    listEvents
+      .sort(
+        (a, b) =>
+          new Date(b.starting).getTime() - new Date(a.starting).getTime()
+      )
+      .forEach((event) => {
+        event.startFormatedDate = format(new Date(event.starting), "d MMMM Y", {
+          locale: fr,
+        });
+        if (event.ending) {
+          event.endFormatedDate = format(new Date(event.ending), "d MMMM Y", {
+            locale: fr,
+          });
+        }
+        const eventYear = new Date(event.starting).getFullYear();
+        if (!evenementsByYears.has(eventYear)) {
+          evenementsByYears.set(eventYear, [event]);
+        } else {
+          evenementsByYears.get(eventYear).push(event);
+        }
       });
-      const eventYear = new Date(event.starting).getFullYear();
-      if (!evenementsByYears.has(eventYear)) {
-        evenementsByYears.set(eventYear, [event]);
-      } else {
-        evenementsByYears.get(eventYear).push(event);
-      }
-    });
     this.listEventsByYear = Array.from(evenementsByYears).sort(
       (a, b) => b[0] - a[0]
     );
-    console.log(this.listEventsByYear);
   },
 };
 </script>
@@ -150,6 +163,14 @@ export default {
   justify-content: flex-start;
   flex-direction: row;
   height: 100%;
+  width: 90%;
+}
+
+.cancelled-tag {
+  position: absolute;
+  margin: 1rem;
+  top: 0;
+  right: 0;
 }
 
 .media-image {
