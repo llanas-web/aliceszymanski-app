@@ -179,5 +179,6 @@ export default {
   width: 20%;
   position: relative;
   margin-right: 2rem;
+  min-height: 10rem;
 }
 </style>
