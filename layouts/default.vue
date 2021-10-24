@@ -24,7 +24,7 @@
             aria-label="menu"
             aria-expanded="false"
             :class="{ 'is-active': isBurgerToggled }"
-            v-on:click="isBurgerToggled = !isBurgerToggled"
+            @click="isBurgerToggled = !isBurgerToggled"
           >
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -32,7 +32,7 @@
           </a>
         </div>
         <div class="navbar-menu" :class="{ 'is-active': isBurgerToggled }">
-          <div class="navbar-start">
+          <div class="navbar-start" @click="() => (isBurgerToggled = false)">
             <nuxt-link to="/" class="navbar-item has-text-centered is-uppercase"
               >Accueil</nuxt-link
             >
