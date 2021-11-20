@@ -1,22 +1,27 @@
 <template>
   <div class="card">
-    <div class="card-image" v-if="strapiEvent != null">
-      <div class="coverImage" :style="{backgroundImage: 'url(' + strapiEvent.image.url + ')'}"></div>
+    <div class="card-image" v-if="strapiEvent.image != null">
+      <div
+        class="coverImage"
+        :style="{ backgroundImage: 'url(' + strapiEvent.image.url + ')' }"
+      ></div>
     </div>
     <div class="card-content">
       <div class="media ml-5">
         <div class="media-content">
-          <p class="title is-4">{{strapiEvent.title}}</p>
+          <p class="title is-4">{{ strapiEvent.title }}</p>
         </div>
       </div>
 
       <div class="content">
-        <vue-simple-markdown :source="strapiEvent.description"></vue-simple-markdown>
+        <vue-simple-markdown
+          :source="strapiEvent.description"
+        ></vue-simple-markdown>
       </div>
     </div>
     <footer class="card-footer">
       <div class="level-item">
-        <time datetime="2016-1-1">{{strapiEvent.formatedDate}}</time>
+        <time datetime="2016-1-1">{{ strapiEvent.formatedDate }}</time>
       </div>
       <div class="level-item">
         <span v-if="strapiEvent.cancelled" class="is-size-6">Annulé</span>
