@@ -57,7 +57,7 @@
               >Agenda</nuxt-link
             >
             <nuxt-link
-              to="/gallery"
+              to="/galerie"
               class="navbar-item has-text-centered is-uppercase"
               >Galerie</nuxt-link
             >
